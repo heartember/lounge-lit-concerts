@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Lounge-Lit House Concerts • Santa Cruz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="logo-circle.png" />
+
   <style>
     :root {
       --bg: #0b0514;
@@ -48,23 +48,11 @@
     }
 
     /* HEADER */
-
     .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 26px;
-    }
-
-    .site-header-left {
-      /* This is now the logo container */
-    }
-
-    .site-header-right {
       display: flex;
       flex-direction: column;
       gap: 6px;
+      margin-bottom: 26px;
     }
 
     .eyebrow {
@@ -85,30 +73,10 @@
       font-size: 1rem;
     }
 
-    /* SMALL LOGO / ICON (top left) */
-
-    .site-logo {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.28);
-      overflow: hidden;
-      flex-shrink: 0;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.7);
-    }
-
-    .site-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
     /* MAIN HERO LAYOUT */
-
     .hero {
       display: grid;
-      grid-template-columns: minmax(0,1.15fr) minmax(0,1fr);
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
       gap: 28px;
       align-items: stretch;
     }
@@ -139,7 +107,7 @@
       border: 1px solid var(--border-soft);
       font-size: 0.82rem;
       color: var(--accent-soft);
-      background: rgba(15,6,28,0.85);
+      background: rgba(15, 6, 28, 0.85);
       backdrop-filter: blur(6px);
     }
 
@@ -147,8 +115,8 @@
       margin-top: 14px;
       padding: 14px 15px 16px;
       border-radius: var(--radius-md);
-      background: linear-gradient(135deg, rgba(46,25,80,0.96), rgba(20,10,38,0.96));
-      border: 1px solid rgba(214,194,255,0.24);
+      background: linear-gradient(135deg, rgba(46, 25, 80, 0.96), rgba(20, 10, 38, 0.96));
+      border: 1px solid rgba(214, 194, 255, 0.24);
     }
 
     .hero-cta-card h2 {
@@ -175,7 +143,7 @@
       padding: 10px 11px;
       border-radius: 999px;
       border: 1px solid #3d2854;
-      background: rgba(5,1,12,0.9);
+      background: rgba(5, 1, 12, 0.9);
       color: var(--text-main);
       font-size: 0.92rem;
     }
@@ -194,35 +162,28 @@
       font-size: 0.95rem;
       cursor: pointer;
       white-space: nowrap;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.55);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
       transition: background 0.14s ease, transform 0.14s ease, box-shadow 0.14s ease;
     }
 
     .button-primary:hover {
       background: var(--button-bg-hover);
       transform: translateY(-1px);
-      box-shadow: 0 14px 34px rgba(0,0,0,0.6);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.6);
     }
 
     .button-primary:active {
       transform: translateY(0);
-      box-shadow: 0 7px 20px rgba(0,0,0,0.6);
+      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.6);
     }
 
-    .note {
-      margin-top: 6px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* HERO IMAGE ON THE RIGHT */
-
+    /* HERO RIGHT IMAGE */
     .hero-media {
       border-radius: 22px;
       overflow: hidden;
       position: relative;
-      border: 1px solid rgba(164,123,255,0.3);
-      box-shadow: 0 18px 44px rgba(0,0,0,0.8);
+      border: 1px solid rgba(164, 123, 255, 0.3);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.8);
       background: radial-gradient(circle at top, #291538 0, #050208 60%, #020005 100%);
     }
 
@@ -240,16 +201,14 @@
       position: absolute;
       left: 14px;
       bottom: 14px;
-      background: rgba(6,2,15,0.78);
+      background: rgba(6, 2, 15, 0.78);
       border-radius: 999px;
       padding: 6px 12px;
       font-size: 0.78rem;
       color: var(--accent-soft);
-      border: 1px solid rgba(214,194,255,0.3);
+      border: 1px solid rgba(214, 194, 255, 0.3);
       backdrop-filter: blur(8px);
     }
-
-    /* FOOTER */
 
     footer {
       margin-top: 28px;
@@ -264,59 +223,51 @@
     }
 
     /* RESPONSIVE */
-
     @media (max-width: 800px) {
-      body { padding: 18px 10px 34px; }
-      .page { padding: 20px 18px 22px; }
-      .site-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-    }
-
-    @media (max-width: 520px) {
-      .site-logo {
-        width: 58px;
-        height: 58px;
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-media {
+        order: -1;
+        max-height: 320px;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
-    <!-- HEADER with small circular logo on the left -->
     <header class="site-header">
-      <div class="site-header-left">
-        <div class="site-logo">
-          <img src="logo-circle.png" alt="Lounge-Lit House Concerts logo" />
-        </div>
-      </div>
-      <div class="site-header-right">
-        <div class="eyebrow">Santa Cruz, California</div>
-        <h1>Lounge-Lit House Concerts</h1>
-        <p class="tagline">Warmly vibed live music in a spacious home.</p>
-      </div>
+      <div class="eyebrow">Santa Cruz, California</div>
+      <h1>Lounge-Lit House Concerts</h1>
+      <p class="tagline">Warmly vibed live music in a spacious home.</p>
     </header>
 
-    <!-- HERO LAYOUT -->
     <main class="hero">
-      <!-- LEFT: text + signup -->
       <section class="hero-copy">
         <p>
-          A few times a year, a music room in Santa Cruz opens to a small audience for evenings of real listening. Just beyond the glass, a lush garden waterfall sets the tone while instruments come alive and songs unfold in the same room as you.
+          A few times a year, a music room in Santa Cruz opens to a small audience
+          for evenings of real listening. Just beyond the glass, a lush garden
+          waterfall sets the tone while instruments come alive and songs unfold
+          in the same room as you.
         </p>
 
         <p>
-          Gracious host Eric Schneider welcomes us into his home to hear artists up close, linger in conversation, and let the night move at a human pace.
+          Gracious host Eric Schneider welcomes us into his home to hear artists
+          up close, linger in conversation, and let the night move at a human pace.
         </p>
 
         <div class="hero-bullets">
           <div class="pill">Spacious seated listening</div>
-          <div class="pill">Original music &amp; stories</div>
+          <div class="pill">Original music & stories</div>
           <div class="pill">Santa Cruz neighborhood setting</div>
         </div>
 
         <div class="hero-cta-card">
           <h2>Join the Lounge-Lit list</h2>
           <p class="small">
-            Get an email when a new concert is announced—just a small handful of messages each year, sent with care.
+            Get an email when a new concert is announced—just a small handful each year,
+            sent with care.
           </p>
 
           <form
@@ -326,27 +277,21 @@
             target="popupwindow"
             onsubmit="window.open('https://buttondown.email/lounge-lit', 'popupwindow')"
           >
-            <input
-              type="email"
-              name="email"
-              placeholder="you@example.com"
-              required
-            />
+            <input type="email" name="email" placeholder="you@example.com" required />
             <button class="button-primary" type="submit">Join the list</button>
           </form>
 
           <div class="note">
-            You’ll get invitations and occasional updates. Unsubscribe with a single click anytime.
+            You’ll get invitations and occasional updates. Unsubscribe anytime.
           </div>
         </div>
       </section>
 
-      <!-- RIGHT: HERO IMAGE -->
       <aside class="hero-media">
         <img
           class="hero-image"
           src="hero-jungle-waterfall.png"
-          alt="Jungle-style garden waterfall near the music room"
+          alt="Garden waterfall near the music room"
         />
         <div class="hero-media-tag">Garden waterfall just beyond the music room</div>
       </aside>
