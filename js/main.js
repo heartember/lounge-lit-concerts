@@ -1,12 +1,12 @@
 // ------------------------------
-// Lounge-Lit House Concerts
+// Gather Santa Cruz House Concerts
 // Placeholder JavaScript File
 // ------------------------------
 
 // This function runs when the page is fully loaded.
 // Add any initial interactive behavior here.
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Lounge-Lit site loaded (placeholder JS).");
+  console.log("Gather Santa Cruz site loaded (placeholder JS).");
 
   // Example: in the future, you can animate the hero image,
   // add a fade-in effect, or handle form states here.
@@ -18,11 +18,11 @@ function notYetImplemented(featureName) {
 }
 
 // Optional: expose it globally so you can test in browser devtools
-window.LoungeLit = {
+window.GatherSantaCruz = {
   notYetImplemented
 };
 
 window.LLCONFIG = {
-  mailingListUrl: "https://buttondown.email/lounge-lit", // temporary
+  mailingListUrl: "https://buttondown.email/gathersantacruz", // temporary
 };
 
