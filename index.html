@@ -4,270 +4,47 @@
   <meta charset="UTF-8" />
   <title>Lounge-Lit House Concerts • Santa Cruz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <style>
-    :root {
-      --bg: #0b0514;
-      --bg-soft: #1a1027;
-      --accent: #b48cff;
-      --accent-soft: #d6c2ff;
-      --text-main: #f7f0e9;
-      --text-muted: #c0b4d0;
-      --border-soft: #3b274f;
-      --button-bg: #b48cff;
-      --button-bg-hover: #cfb3ff;
-      --button-text: #220833;
-      --radius-lg: 18px;
-      --radius-md: 10px;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
-      --max-width: 1040px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1e1232 0, #050308 55%, #020008 100%);
-      color: var(--text-main);
-      display: flex;
-      justify-content: center;
-      padding: 32px 16px 48px;
-    }
-
-    .page {
-      width: 100%;
-      max-width: var(--max-width);
-      background: radial-gradient(circle at top left, #28163e 0, #100718 45%, #09030f 100%);
-      border-radius: 24px;
-      padding: 28px 26px 30px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid #2b173f;
-    }
-
-    /* HEADER */
-    .site-header {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 26px;
-    }
-
-    .eyebrow {
-      font-size: 0.85rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    h1 {
-      font-size: clamp(2rem, 2.4vw + 1.5rem, 2.6rem);
-      margin: 0;
-    }
-
-    .tagline {
-      margin: 0;
-      color: var(--accent-soft);
-      font-size: 1rem;
-    }
-
-    /* MAIN HERO LAYOUT */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .hero-copy p {
-      margin: 0;
-      color: var(--text-muted);
-      line-height: 1.5;
-      font-size: 0.98rem;
-    }
-
-    .hero-bullets {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    .pill {
-      padding: 6px 11px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      font-size: 0.82rem;
-      color: var(--accent-soft);
-      background: rgba(15, 6, 28, 0.85);
-      backdrop-filter: blur(6px);
-    }
-
-    .hero-cta-card {
-      margin-top: 14px;
-      padding: 14px 15px 16px;
-      border-radius: var(--radius-md);
-      background: linear-gradient(135deg, rgba(46, 25, 80, 0.96), rgba(20, 10, 38, 0.96));
-      border: 1px solid rgba(214, 194, 255, 0.24);
-    }
-
-    .hero-cta-card h2 {
-      font-size: 1.05rem;
-      margin: 0 0 4px;
-    }
-
-    .hero-cta-card p.small {
-      font-size: 0.86rem;
-      margin: 4px 0 10px;
-      color: var(--text-muted);
-    }
-
-    .signup-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .signup-form input[type="email"] {
-      flex: 1 1 180px;
-      min-width: 0;
-      padding: 10px 11px;
-      border-radius: 999px;
-      border: 1px solid #3d2854;
-      background: rgba(5, 1, 12, 0.9);
-      color: var(--text-main);
-      font-size: 0.92rem;
-    }
-
-    .signup-form input[type="email"]::placeholder {
-      color: #86749c;
-    }
-
-    .button-primary {
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: none;
-      background: var(--button-bg);
-      color: var(--button-text);
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      white-space: nowrap;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
-      transition: background 0.14s ease, transform 0.14s ease, box-shadow 0.14s ease;
-    }
-
-    .button-primary:hover {
-      background: var(--button-bg-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.6);
-    }
-
-    .button-primary:active {
-      transform: translateY(0);
-      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    /* HERO RIGHT IMAGE */
-    .hero-media {
-      border-radius: 22px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid rgba(164, 123, 255, 0.3);
-      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.8);
-      background: radial-gradient(circle at top, #291538 0, #050208 60%, #020005 100%);
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      min-height: 260px;
-      object-fit: cover;
-      display: block;
-      filter: saturate(1.1);
-      transform: scale(1.03);
-    }
-
-    .hero-media-tag {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      background: rgba(6, 2, 15, 0.78);
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 0.78rem;
-      color: var(--accent-soft);
-      border: 1px solid rgba(214, 194, 255, 0.3);
-      backdrop-filter: blur(8px);
-    }
-
-    footer {
-      margin-top: 28px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border-soft);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .hero-media {
-        order: -1;
-        max-height: 320px;
-      }
-    }
-  </style>
+  <link rel="icon" href="img/logo-circle.png" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
   <div class="page">
+
+    <!-- HEADER -->
     <header class="site-header">
-      <div class="eyebrow">Santa Cruz, California</div>
-      <h1>Lounge-Lit House Concerts</h1>
-      <p class="tagline">Warmly vibed live music in a spacious home.</p>
+      <div class="site-header-left">
+        <div class="eyebrow">Santa Cruz, California</div>
+        <p class="tagline">Warmly vibed live music in a spacious home.</p>
+      </div>
     </header>
 
+    <!-- HERO LAYOUT -->
     <main class="hero">
+      <!-- LEFT: text + signup -->
       <section class="hero-copy">
         <p>
-          A few times a year, a music room in Santa Cruz opens to a small audience
-          for evenings of real listening. Just beyond the glass, a lush garden
-          waterfall sets the tone while instruments come alive and songs unfold
-          in the same room as you.
+          A few times a year, a music room in Santa Cruz opens to a small audience 
+          for evenings of real listening. Just beyond the glass, a lush garden 
+          waterfall sets the tone while instruments come alive and songs unfold.
         </p>
 
         <p>
-          Gracious host Eric Schneider welcomes us into his home to hear artists
+          Gracious host Eric Schneider welcomes us into his home to hear artists 
           up close, linger in conversation, and let the night move at a human pace.
         </p>
 
         <div class="hero-bullets">
           <div class="pill">Spacious seated listening</div>
-          <div class="pill">Original music & stories</div>
+          <div class="pill">Original music &amp; stories</div>
           <div class="pill">Santa Cruz neighborhood setting</div>
         </div>
 
         <div class="hero-cta-card">
           <h2>Join the Lounge-Lit list</h2>
           <p class="small">
-            Get an email when a new concert is announced—just a small handful each year,
-            sent with care.
+            Get an email when a new concert is announced—just a small handful of
+            messages each year, sent with care.
           </p>
 
           <form
@@ -277,30 +54,43 @@
             target="popupwindow"
             onsubmit="window.open('https://buttondown.email/lounge-lit', 'popupwindow')"
           >
-            <input type="email" name="email" placeholder="you@example.com" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
             <button class="button-primary" type="submit">Join the list</button>
           </form>
 
           <div class="note">
-            You’ll get invitations and occasional updates. Unsubscribe anytime.
+            You’ll get invitations and occasional updates. Unsubscribe with a
+            single click anytime.
           </div>
         </div>
       </section>
 
+      <!-- RIGHT: HERO IMAGE -->
       <aside class="hero-media">
         <img
           class="hero-image"
-          src="hero-jungle-waterfall.png"
-          alt="Garden waterfall near the music room"
+          src="img/hero-jungle-waterfall.jpg"
+          alt="Jungle-style garden waterfall near the music room"
         />
-        <div class="hero-media-tag">Garden waterfall just beyond the music room</div>
+        <div class="hero-media-tag">
+          Garden waterfall just beyond the music room
+        </div>
       </aside>
     </main>
 
+    <!-- FOOTER -->
     <footer>
       <div>Lounge-Lit House Concerts • Hosted by Eric Schneider in Santa Cruz, CA</div>
       <div>Emails are sent with Buttondown.</div>
     </footer>
+
   </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
