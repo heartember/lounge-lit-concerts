@@ -58,8 +58,6 @@ body {
   margin-bottom: 26px;
 }
 
-
-
 .site-header-left {
   display: flex;
   flex-direction: column;
@@ -76,6 +74,20 @@ body {
 h1 {
   font-size: clamp(2rem, 2.4vw + 1.5rem, 2.6rem);
   margin: 0;
+}
+
+.subheading {
+  margin: 12px 0 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-soft);
+}
+
+.subheading-copy {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
 .tagline {
