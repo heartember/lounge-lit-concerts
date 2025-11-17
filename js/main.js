@@ -21,3 +21,8 @@ function notYetImplemented(featureName) {
 window.LoungeLit = {
   notYetImplemented
 };
+
+window.LLCONFIG = {
+  mailingListUrl: "https://buttondown.email/lounge-lit", // temporary
+};
+
